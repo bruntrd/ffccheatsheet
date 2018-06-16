@@ -12,10 +12,10 @@ import {SheetOptions} from './sheetoptions.model';
 })
 
 export class OptionsComponent implements OnInit{
-    returnPlayerArray: Array<objetc> =
-    sheetOptions=  new SheetOptions('Standard',100,'Editors','2017');
+    returnPlayerArray: Array<object> = [];
+    sheetOptions=  new SheetOptions('Standard',100,'Editors');
     leagueTypes: Array<string> = ['PPR','Standard'];
-    players: Array<number> = ['25','50','75','100','150','200'];
+    players: Array<string> = ['25','50','75','100','150','200'];
     rankings: Array<string> = ['Editors','User Drafts'];
     seasons: Array<string> = ['2017','2016','2015','2014'];
     constructor(private cheatsheetService: CheatsheetService){};
@@ -23,7 +23,7 @@ export class OptionsComponent implements OnInit{
 
 
     onSubmit(form: NgForm){
-        const sheetOptions = new SheetOptions(form.value.type,form.value.player,form.value.rankings,form.value.season);
+        const sheetOptions = new SheetOptions(form.value.type,form.value.player,form.value.rankings);
         console.log(sheetOptions);
         this.cheatsheetService.getPlayers(sheetOptions)
             .subscribe(

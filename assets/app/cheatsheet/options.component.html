@@ -5,23 +5,21 @@
             <form (ngSubmit)="onSubmit(f)" #f="ngForm">
 
                 <div class="form-group">
-                    <select class="form-control" id="type" required [(ngModel)]="sheetOptions.type" name="type" style="width:150px;">
+                    <select class="form-control" id="type" required [(ngModel)]="sheetOptions.type" name="type"
+                            style="width:150px;">
                         <option *ngFor="let type of leagueTypes" [value]="type">{{type}}</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <select class="form-control" id="players" required [(ngModel)]="sheetOptions.count" name="player" style="width:150px;">
+                    <select class="form-control" id="players" required [(ngModel)]="sheetOptions.count" name="player"
+                            style="width:150px;">
                         <option *ngFor="let player of players" [value]="player">{{player}}</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <select class="form-control" id="rankings" required [(ngModel)]="sheetOptions.ranking" name="rankings" style="width:150px;">
+                    <select class="form-control" id="rankings" required [(ngModel)]="sheetOptions.ranking"
+                            name="rankings" style="width:150px;">
                         <option *ngFor="let ranking of rankings" [value]="ranking">{{ranking}}</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <select class="form-control" id="season" required [(ngModel)]="sheetOptions.season" name="season" style="width:150px;">
-                        <option *ngFor="let season of seasons" [value]="season">{{season}}</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-success">Get Player Rankings</button>
