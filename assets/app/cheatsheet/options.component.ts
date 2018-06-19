@@ -4,6 +4,7 @@ import {CheatsheetService} from './cheatsheet.service';
 
 
 import {SheetOptions} from './sheetoptions.model';
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'optionsComponent',
@@ -17,24 +18,24 @@ export class OptionsComponent implements OnInit{
     leagueTypes: Array<string> = ['PPR','Standard'];
     players: Array<string> = ['25','50','75','100','150','200'];
     rankings: Array<string> = ['Editors','User Drafts'];
-    seasons: Array<string> = ['2017','2016','2015','2014'];
-    constructor(private cheatsheetService: CheatsheetService){};
+    constructor(private cheatsheetService: CheatsheetService, private router : Router){};
 
 
 
     onSubmit(form: NgForm){
         const sheetOptions = new SheetOptions(form.value.type,form.value.player,form.value.rankings);
-        console.log(sheetOptions);
         this.cheatsheetService.getPlayers(sheetOptions)
             .subscribe(
                 data=>console.log(data),
-                error=>console.error(error)
-            )
+                error=>console.error(error),
+                ()=> this.router.navigateByUrl('/cheatsheet')
+
+            );
+        console.log('heyo');
     }
 
     ngOnInit(){
-        console.log(this.leagueTypes);
-        console.log(this.players);
+
     }
 
 }

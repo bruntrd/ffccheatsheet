@@ -10,6 +10,7 @@ import {LoginService} from "./cheatsheet/login.service";
                 <li *ngIf="!isLoggedIn()" routerLinkActive="active"><a [routerLink]="['/login']">Home</a></li>
                 <li *ngIf="isLoggedIn()" routerLinkActive="active"><a [routerLink]="['/options']">Options</a></li>
                 <li *ngIf="isLoggedIn()" routerLinkActive="active"><a [routerLink]="['/cheatsheet']">Sheet</a></li>
+                <li *ngIf="isLoggedIn()" (click)="onLogout()" ><a href="">Logout</a></li>
             </ul>
         </nav>
     </div>`

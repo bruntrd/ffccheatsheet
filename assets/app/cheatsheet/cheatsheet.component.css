@@ -1,0 +1,25 @@
+.storedPlayerList {
+    list-style-type: none;
+
+}
+.storedPlayerItem{
+    font-size:20px;
+    font-family:Helvetica;
+    border-bottom:1px solid lightgray;
+    color:#578EBE;
+    margin:5px 0 5px 0;
+}
+.storedPlayerItem:hover{
+    cursor:pointer;
+}
+.rankedPlayerList {
+    list-style-type: none;
+
+}
+.rankedPlayerItem{
+    font-size:20px;
+    font-family:Helvetica;
+    border-bottom:1px solid lightgray;
+    color:#578EBE;
+    margin:5px 0 5px 0;
+}

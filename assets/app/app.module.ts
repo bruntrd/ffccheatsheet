@@ -12,6 +12,7 @@ import {SignupComponent} from "./cheatsheet/signup.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CheatsheetService} from "./cheatsheet/cheatsheet.service";
 import {HttpModule} from "@angular/http";
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
     declarations: [
@@ -25,7 +26,7 @@ import {HttpModule} from "@angular/http";
 
     ],
     providers:[CheatsheetService,LoginService],
-    imports: [BrowserModule, routing, FormsModule,ReactiveFormsModule,HttpModule],
+    imports: [BrowserModule, routing, FormsModule,ReactiveFormsModule,HttpModule,NgxPaginationModule],
     bootstrap: [AppComponent]
 })
 
